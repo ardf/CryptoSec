@@ -1,4 +1,4 @@
-# Encrypto-system
+# CryptoSec
 
 #### This project demonstrates foundational cryptographic algorithms for educational purpose
 
