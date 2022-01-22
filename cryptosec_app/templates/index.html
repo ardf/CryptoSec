@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>CryptoSec</title>
+{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>CRYPTOSEC</h3>
+        <p>Cryptography is typically bypassed,not penetrated.</p>
+        <a href="#" class="btn">Learn more</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> What is <span> Cryptography </span> ? </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="{% static 'img/[Resizer.in]-61daf0a680932.jpg' %}" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Cryptography</h3>
+            <p>Cryptography is the science of protecting information by transforming it into a secure format. This
+                process, called encryption, has been used for centuries to prevent handwritten messages from being
+                read by unintended recipients. </p>
+            <p>Today, cryptography is used to protect digital data. It is a division of computer science that
+                focuses on transforming data into formats that cannot be recognized by unauthorized users.</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- menu section starts  -->
+
+<section class="menu" id="menu">
+
+    <h1 class="heading"> symmetric <span>algorithm</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'img/c11.jpg' %}" alt="">
+            <h3> Caesar Cipher</h3>
+            <div class="price">The Caesar Cipher technique is one of the earliest and simplest method of encryption
+                technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced
+                by a letter some fixed number of positions down the alphabet. For example with a shift of 1, A would
+                be replaced by B, B would become C, and so on </div>
+            <a href="/caesar-cipher" class="btn">Demo</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'img/c5.jpg' %}" alt="">
+            <h3>Playfair cipher</h3>
+            <div class="price">The Playfair cipher was the first practical digraph substitution cipher. The scheme
+                was invented in 1854 by Charles Wheatstone but was named after Lord Playfair who promoted the use of
+                the cipher. In playfair cipher unlike traditional cipher we encrypt a pair of alphabets(digraphs)
+                instead of a single alphabet.</div>
+            <a href="/playfair-cipher" class="btn">Demo</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'img/c9.jpg' %}" alt="">
+            <h3>Vigenère Cipher</h3>
+            <div class="price">Vigenere Cipher is a method of encrypting alphabetic text. It uses a simple form of
+                polyalphabetic substitution. A polyalphabetic cipher is any cipher based on substitution, using
+                multiple substitution alphabets. The encryption of the original text is done using the Vigenère
+                square or Vigenère table. </div>
+            <a href="/vignere-cipher" class="btn">Demo</a>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<section class="menu" id="menu">
+
+    <h1 class="heading"> asymmetric <span>algorithm</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'img/c11.jpg' %}" alt="">
+            <h3> Caesar Cipher</h3>
+            <div class="price">The Caesar Cipher technique is one of the earliest and simplest method of encryption
+                technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced
+                by a letter some fixed number of positions down the alphabet. For example with a shift of 1, A would
+                be replaced by B, B would become C, and so on </div>
+            <a href="rsa-cipher" class="btn">Demo</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'img/c5.jpg' %}" alt="">
+            <h3>Playfair cipher</h3>
+            <div class="price">The Playfair cipher was the first practical digraph substitution cipher. The scheme
+                was invented in 1854 by Charles Wheatstone but was named after Lord Playfair who promoted the use of
+                the cipher. In playfair cipher unlike traditional cipher we encrypt a pair of alphabets(digraphs)
+                instead of a single alphabet.</div>
+            <a href="/elgamal-cipher" class="btn">Demo</a>
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- menu section ends -->
+
+
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <div class="row">
+
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.3501165611624!2d74.55545554134093!3d13.997242357244843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc43b24cd7bd31%3A0x6de4820c1a439087!2sAnjuman%20Institute%20of%20Technology%20and%20Management!5e0!3m2!1sen!2sin!4v1642836119428!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <form action="">
+            <h3>get in touch</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="name">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" placeholder="number">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="textarea" placeholder="Enter your Query...">
+            </div>
+            <input type="submit" value="contact now" class="btn">
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- custom js file link  -->
+{% endblock %}

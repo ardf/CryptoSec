@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Playfair Cipher | CryptoSec</title>
+{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/caser.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+{% block content %}
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <div class="container">
+            <div class="title">Playfair Cipher</div>
+            <h3>Encryption</h3>
+            <form class="sub-form" action="" method="post">
+                {% csrf_token %}
+                <label for="message">Message</label>
+                <input type="text" name="message" value="{{message_to_encrypt}}"><br>
+                <label for="keyword">Keyword</label>
+                <input type="text" name="keyword" value={{keyword}}><br>
+                <input type="submit" value="encrypt" name="encrypt"><br>
+                <label for="encryptedMessage">Encrypted Message</label>
+                <input type="text" name="encryptedMessage" readonly value="{{encryptedMessage}}">
+            </form>
+            <hr>
+            <form class="sub-form" action="" method="post">
+                {% csrf_token %}
+                <h3>Decryption</h3>
+
+                <label for="message">Message</label>
+                <input type="text" name="message" value="{{message_to_decrypt}}"><br>
+                <label for="keyword">Keyword</label>
+                <input type="text" name="keyword" value="{{keyword}}"><br>
+                <input type="submit" value="decrypt" name="decrypt"><br>
+                <label for="decryptedMessage">Decrypted Message</label>
+                <input type="text" name="decryptedMessage" readonly value="{{decryptedMessage}}">
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

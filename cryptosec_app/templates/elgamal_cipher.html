@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>El Gamal Cipher | CryptoSec</title>
+{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/caser.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+{% block content %}
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <div class="container">
+            <div class="title">El Gamal Cipher</div>
+
+
+            <h3>Key Generation</h3>
+            <form class="sub-form" method="post">
+                {% csrf_token %}
+                <label for="p">p</label>
+                <input type="number" name="p" id="p" value="{{p}}" required> &nbsp;<br>
+                <label for="g">g</label>
+                <input type="number" name="g" id="g" value="{{g}}" required> &nbsp;<br>
+                <label for="a">a</label>
+                <input type="number" name="a" id="a" value="{{a}}" required> &nbsp;<br> &nbsp;
+                <input type="submit" value="Generate Key" name="genkey"> <br>
+                <label for="key">Key</label>
+                <input type="text" name="key" id="key" value="{{key}}" readonly> &nbsp;
+            </form>
+            <br>
+            <br>
+            <h3>Encryption</h3>
+            <form class="sub-form" action="" method="post">
+                {% csrf_token %}
+                <label for="message">Message</label>
+                <input type="number" name="message" id="message" value="{{message_to_encrypt}}" required> &nbsp;<br>
+                <label for="key">Key</label>
+                <input type="text" name="key" id="key" value="{{encrKey}}" required> &nbsp;<br>
+                <input type="submit" value="Encrypt" name="encrypt"> &nbsp;<br>
+                <div id="divc1">
+                    <label for="c1">C1</label>
+                    <input type="number" name="c1" id="c1" value="{{c1}}" readonly> &nbsp;<br>
+                </div><br>
+                <label for="c2">C2</label>
+
+                <input type="number" name="c2" id="c2" value="{{c2}}" readonly>
+            </form>
+            <hr>
+            <h3>Decryption</h3>
+            <form class="sub-form" action="" method="post">
+                {% csrf_token %}
+                <label for="c1">C1</label>
+                <input type="number" name="c1" id="c1" value="{{c1}}" required> &nbsp;<br>
+                <label for="c2">C2</label>
+                <input type="number" name="c2" id="c2" value="{{c2}}" required> &nbsp;<br>
+                <label for="a">a</label>
+                <input type="number" name="a" id="a" value="{{sec_a}}" required> &nbsp;<br>
+                <input type="submit" value="Decrypt" name="decrypt"><br>
+                <label for="message">Message</label>
+                <input type="number" name="message" id="message" value="{{message}}" readonly>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
