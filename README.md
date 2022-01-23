@@ -17,6 +17,7 @@ A few of them are as follows:
 
 ```sh
 git clone https://github.com/ardf/CryptoSec.git
+pip install virtualenv
 virtualenv venv
 venv/scripts/activate
 pip install -r requirements.txt
