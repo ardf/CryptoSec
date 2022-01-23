@@ -19,9 +19,7 @@ A few of them are as follows:
 git clone https://github.com/ardf/CryptoSec.git
 virtualenv venv
 venv/scripts/activate
-cd encrypto-system
 pip install -r requirements.txt
-cd cgy_assignment
 python manage.py runserver
 ```
 

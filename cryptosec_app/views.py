@@ -31,7 +31,7 @@ def toChar(num):
     return alphabets[num]
 def caesar_cipher_encrypt(message, key):
     encrypted_message = ""
-    for letter in message:
+    for letter in message.lower():
         if letter.isalpha():
             encrypted_message += toChar((toNum(letter) + key))
         else:
@@ -40,7 +40,7 @@ def caesar_cipher_encrypt(message, key):
 
 def caesar_cipher_decrypt(message, key):
     decrypted_message = ""
-    for letter in message:
+    for letter in message.lower():
         if letter.isalpha():
             decrypted_message += toChar((toNum(letter) - key))
         else:
