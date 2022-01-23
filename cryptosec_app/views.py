@@ -236,8 +236,8 @@ def rsa_generate_keypair(p, q):
 
     # Use Extended Euclid's Algorithm to generate the private key
     d = find_inverse(e, phi)
+    i = 2
     while e==d:
-        i=2
         d = find_inverse(e, phi**i)
         i+=1
 
@@ -290,12 +290,14 @@ def rsa_cipher(request):
             p = request.session.get('p')
             q = request.session.get('q')
             privateKey = tuple(request.session.get('privateKey'))
-            message_to_encrypt = int(request.POST.get('message'))
+            message_to_encrypt = request.session['message_to_encrypt'] =  int(request.POST.get('message'))
             publicKey = tuple(int(num) for num in request.POST.get('key').replace('(',"").replace(')',"").split(","))
-            encryptedMessage = rsa_cipher_encrypt(publicKey,message_to_encrypt)
+            encryptedMessage = request.session['encryptedMessage'] = rsa_cipher_encrypt(publicKey,message_to_encrypt)
         elif request.POST.get('decrypt'):
             p = request.session.get('p')
             q = request.session.get('q')
+            message_to_encrypt = request.session.get('message_to_encrypt')
+            encryptedMessage = request.session.get('encryptedMessage')
             publicKey = tuple(request.session.get('publicKey'))
             message_to_decrypt = int(request.POST.get('message'))
             privateKey = tuple(int(num) for num in request.POST.get('key').replace('(',"").replace(')',"").split(","))
