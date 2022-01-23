@@ -11,8 +11,8 @@
 <div class="wrapper fadeInDown">
     <div id="formContent">
 
+        <div class="title">Caesar cipher</div>
         <div class="container">
-            <div class="title">Caesar cipher</div>
             <h3>Encryption</h3>
             <form class="sub-form" method="POST">
                 {% csrf_token %}
@@ -28,25 +28,26 @@
                 <div class="encrypt">
                     <input type="submit" value="encrypt" name="encrypt">
                 </div>
-        </div>
-        <div class="message1">
-            <label for="encryptedMessage">Encrypted Message</label>
-            <input type="text" name="encryptedMessage" readonly value="{{encryptedMessage}}">
+                <div class="message1">
+                    <label for="encryptedMessage">Encrypted Message</label>
+                    <input type="text" name="encryptedMessage" readonly value="{{encryptedMessage}}">
+                </div>
             </form>
-
-            <form class="sub-form" method="POST">
-                {% csrf_token %}
-                <h3>Decryption</h3>
-                <label for="message">Message</label>
-                <input type="text" name="message" value="{{message_to_decrypt}}"><br>
-                <label for="key">Key</label>
-                <input type="number" name="key" value="{{key}}"><br>
-                <input type="submit" value="decrypt" name="decrypt"><br>
-                <label for="encryptedMessage">Decrypted Message</label>
-                <input type="text" name="decryptedMessage" readonly value="{{decryptedMessage}}">
-            </form>
-
         </div>
+
+        <form class="sub-form" method="POST">
+            {% csrf_token %}
+            <h3>Decryption</h3>
+            <label for="message">Message</label>
+            <input type="text" name="message" value="{{message_to_decrypt}}"><br>
+            <label for="key">Key</label>
+            <input type="number" name="key" value="{{key}}"><br>
+            <input type="submit" value="decrypt" name="decrypt"><br>
+            <label for="encryptedMessage">Decrypted Message</label>
+            <input type="text" name="decryptedMessage" readonly value="{{decryptedMessage}}">
+        </form>
+
     </div>
+</div>
 </div>
 {% endblock %}
