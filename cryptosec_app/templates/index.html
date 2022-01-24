@@ -101,21 +101,26 @@
 
         <div class="box">
             <img src="{% static 'img/c11.jpg' %}" alt="">
-            <h3> Caesar Cipher</h3>
-            <div class="price">The Caesar Cipher technique is one of the earliest and simplest method of encryption
-                technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced
-                by a letter some fixed number of positions down the alphabet. For example with a shift of 1, A would
-                be replaced by B, B would become C, and so on </div>
+            <h3> RSA Cipher</h3>
+            <div class="price">In a public-key cryptosystem, the encryption key is public and distinct from the
+                decryption key, which is kept secret
+                (private). An RSA user creates and publishes a public key based on two large prime numbers, along with
+                an auxiliary
+                value. The prime numbers are kept secret. Messages can be encrypted by anyone, via the public key, but
+                can only be
+                decoded by someone who knows the prime numbers.</div>
             <a href="rsa-cipher" class="btn">Demo</a>
         </div>
 
         <div class="box">
             <img src="{% static 'img/c5.jpg' %}" alt="">
-            <h3>Playfair cipher</h3>
-            <div class="price">The Playfair cipher was the first practical digraph substitution cipher. The scheme
-                was invented in 1854 by Charles Wheatstone but was named after Lord Playfair who promoted the use of
-                the cipher. In playfair cipher unlike traditional cipher we encrypt a pair of alphabets(digraphs)
-                instead of a single alphabet.</div>
+            <h3>El Gamal cipher</h3>
+            <div class="price">ElGamal encryption is a public-key cryptosystem. It uses asymmetric key encryption for
+                communicating between two parties
+                and encrypting the message.
+                This cryptosystem is based on the difficulty of finding discrete logarithm in a cyclic group that is
+                even if we know ga
+                and gk, it is extremely difficult to compute gak.</div>
             <a href="/elgamal-cipher" class="btn">Demo</a>
         </div>
 

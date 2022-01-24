@@ -29,6 +29,7 @@ def toNum(char):
 def toChar(num):
     num %= 26
     return alphabets[num]
+    
 def caesar_cipher_encrypt(message, key):
     encrypted_message = ""
     for letter in message.lower():
@@ -177,11 +178,11 @@ def vignere_cipher(request):
             key = vignere_cipher_matchKey(message_to_encrypt,request.POST.get('keyword'))
             if(not(message_to_encrypt.isalpha() and str(key).isalpha())):
                 return HttpResponse("<script>alert('Only Aphabet input will be accepted. Numerical and special characters are not allowed.');history.back()</script>")
-            encryptedMessage = vignere_cipher_encrypt(message_to_encrypt, key)
+            encryptedMessage = vignere_cipher_encrypt(message_to_encrypt.lower(), key)
         elif request.POST.get('decrypt'):
             message_to_decrypt = "".join(request.POST.get('message').strip().split(" "))
             key = vignere_cipher_matchKey(message_to_decrypt,request.POST.get('keyword'))
-            decryptedMessage = vignere_cipher_decrypt(message_to_decrypt, key)
+            decryptedMessage = vignere_cipher_decrypt(message_to_decrypt.lower(), key)
     return render(request,'vignere_cipher.html',{'message_to_encrypt':message_to_encrypt,'message_to_decrypt':message_to_decrypt,'keyword':key,'encryptedMessage':encryptedMessage,'decryptedMessage':decryptedMessage})
 
 #End functions for Vignere Cipher
